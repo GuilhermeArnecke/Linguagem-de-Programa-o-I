@@ -148,7 +148,7 @@ object Form1: TForm1
     object Dica8: TLabel
       Left = 30
       Top = 421
-      Width = 435
+      Width = 431
       Height = 34
       Caption = 
         'O filho da '#194'ngela est'#225' em algum lugar entre o filho da Joyce e o' +
@@ -266,7 +266,7 @@ object Form1: TForm1
       Top = 410
       Width = 278
       Height = 17
-      Caption = 'O Vampiro est'#225' exatamente '#224' direita do Theles.'
+      Caption = 'O Vampiro est'#225' exatamente '#224' direita do Thales.'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
@@ -309,6 +309,7 @@ object Form1: TForm1
           Top = 16
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 0
           OnChange = Carregamento
           Items.Strings = (
@@ -324,6 +325,7 @@ object Form1: TForm1
           Top = 44
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 1
           OnChange = Carregamento
           Items.Strings = (
@@ -339,6 +341,7 @@ object Form1: TForm1
           Top = 72
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 2
           OnChange = Carregamento
           Items.Strings = (
@@ -354,6 +357,7 @@ object Form1: TForm1
           Top = 101
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 3
           OnChange = Carregamento
           Items.Strings = (
@@ -369,6 +373,7 @@ object Form1: TForm1
           Top = 130
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 4
           OnChange = Carregamento
           Items.Strings = (
@@ -384,6 +389,7 @@ object Form1: TForm1
           Top = 159
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 5
           OnChange = Carregamento
           Items.Strings = (
@@ -407,6 +413,7 @@ object Form1: TForm1
           Top = 16
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 0
           OnChange = Carregamento
           Items.Strings = (
@@ -422,6 +429,7 @@ object Form1: TForm1
           Top = 43
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 1
           OnChange = Carregamento
           Items.Strings = (
@@ -437,6 +445,7 @@ object Form1: TForm1
           Top = 72
           Width = 146
           Height = 23
+          Style = csDropDownList
           TabOrder = 2
           OnChange = Carregamento
           Items.Strings = (
@@ -452,6 +461,7 @@ object Form1: TForm1
           Top = 101
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 3
           OnChange = Carregamento
           Items.Strings = (
@@ -467,6 +477,7 @@ object Form1: TForm1
           Top = 130
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 4
           OnChange = Carregamento
           Items.Strings = (
@@ -482,6 +493,7 @@ object Form1: TForm1
           Top = 159
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 5
           OnChange = Carregamento
           Items.Strings = (
@@ -505,6 +517,7 @@ object Form1: TForm1
           Top = 16
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 0
           OnChange = Carregamento
           Items.Strings = (
@@ -520,6 +533,7 @@ object Form1: TForm1
           Top = 44
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 1
           OnChange = Carregamento
           Items.Strings = (
@@ -535,6 +549,7 @@ object Form1: TForm1
           Top = 72
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 2
           OnChange = Carregamento
           Items.Strings = (
@@ -550,6 +565,7 @@ object Form1: TForm1
           Top = 101
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 3
           OnChange = Carregamento
           Items.Strings = (
@@ -565,6 +581,7 @@ object Form1: TForm1
           Top = 130
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 4
           OnChange = Carregamento
           Items.Strings = (
@@ -580,6 +597,7 @@ object Form1: TForm1
           Top = 159
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 5
           OnChange = Carregamento
           Items.Strings = (
@@ -603,6 +621,7 @@ object Form1: TForm1
           Top = 16
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 0
           OnChange = Carregamento
           Items.Strings = (
@@ -618,6 +637,7 @@ object Form1: TForm1
           Top = 44
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 1
           OnChange = Carregamento
           Items.Strings = (
@@ -633,6 +653,7 @@ object Form1: TForm1
           Top = 73
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 2
           OnChange = Carregamento
           Items.Strings = (
@@ -648,6 +669,7 @@ object Form1: TForm1
           Top = 102
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 3
           OnChange = Carregamento
           Items.Strings = (
@@ -663,6 +685,7 @@ object Form1: TForm1
           Top = 130
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 4
           OnChange = Carregamento
           Items.Strings = (
@@ -678,6 +701,7 @@ object Form1: TForm1
           Top = 159
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 5
           OnChange = Carregamento
           Items.Strings = (
@@ -701,6 +725,7 @@ object Form1: TForm1
           Top = 16
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 0
           OnChange = Carregamento
           Items.Strings = (
@@ -716,6 +741,7 @@ object Form1: TForm1
           Top = 43
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 1
           OnChange = Carregamento
           Items.Strings = (
@@ -731,7 +757,7 @@ object Form1: TForm1
           Top = 72
           Width = 145
           Height = 23
-          ItemIndex = 2
+          Style = csDropDownList
           TabOrder = 2
           OnChange = Carregamento
           Items.Strings = (
@@ -747,6 +773,7 @@ object Form1: TForm1
           Top = 101
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 3
           OnChange = Carregamento
           Items.Strings = (
@@ -762,6 +789,7 @@ object Form1: TForm1
           Top = 130
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 4
           OnChange = Carregamento
           Items.Strings = (
@@ -777,6 +805,7 @@ object Form1: TForm1
           Top = 159
           Width = 145
           Height = 23
+          Style = csDropDownList
           TabOrder = 5
           OnChange = Carregamento
           Items.Strings = (
