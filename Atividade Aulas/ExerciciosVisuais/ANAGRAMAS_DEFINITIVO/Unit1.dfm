@@ -23,9 +23,8 @@ object Form1: TForm1
     Color = clCream
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = -8
-    ExplicitWidth = 1089
-    ExplicitHeight = 561
+    ExplicitWidth = 1066
+    ExplicitHeight = 538
     object Painel_de_Respostas: TPanel
       Left = 1
       Top = 1
@@ -41,9 +40,7 @@ object Form1: TForm1
       ParentBackground = False
       ParentFont = False
       TabOrder = 0
-      ExplicitLeft = 24
-      ExplicitTop = 16
-      ExplicitWidth = 1041
+      ExplicitWidth = 1064
     end
     object Painel_de_Letras: TPanel
       Left = 1
@@ -54,9 +51,7 @@ object Form1: TForm1
       Color = clCornsilk
       ParentBackground = False
       TabOrder = 1
-      ExplicitLeft = 24
-      ExplicitTop = 135
-      ExplicitWidth = 1041
+      ExplicitWidth = 1064
       object Button1: TButton
         Left = 16
         Top = 13
@@ -217,10 +212,8 @@ object Form1: TForm1
       Color = clCornsilk
       ParentBackground = False
       TabOrder = 2
-      ExplicitLeft = 17
-      ExplicitTop = 272
-      ExplicitWidth = 1041
-      ExplicitHeight = 289
+      ExplicitWidth = 1064
+      ExplicitHeight = 318
     end
   end
 end

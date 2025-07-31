@@ -100,7 +100,7 @@ begin
   begin
     Painel_de_Respostas.Caption := StringReplace(Painel_de_Respostas.Caption,
       LetraBotao[0], '', []);
-    Button1.Enabled := True;
+    Button2.Enabled := True;
   end;
 end;
 
