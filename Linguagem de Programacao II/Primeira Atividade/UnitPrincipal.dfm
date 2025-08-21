@@ -10,6 +10,7 @@ object Form1: TForm1
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Menu = MainMenu1
   TextHeight = 15
   object TabelaEstados: TDBGrid
     Left = 16
@@ -42,28 +43,20 @@ object Form1: TForm1
     TabOrder = 2
     OnClick = BuscarDadosButtonClick
   end
-  object FDConexao: TFDConnection
-    Params.Strings = (
-      'DriverID=FB'
-      'User_Name=sysdba'
-      'Password=masterkey')
-    Left = 40
-    Top = 24
-  end
-  object FDPhysFBDriverLink1: TFDPhysFBDriverLink
-    Left = 144
-    Top = 24
-  end
-  object FDQueryConsulta: TFDQuery
-    Connection = FDConexao
-    SQL.Strings = (
-      '')
-    Left = 264
-    Top = 24
-  end
   object DSEstados: TDataSource
-    DataSet = FDQueryConsulta
+    DataSet = DMPrincipal.FDQueryConsulta
     Left = 360
     Top = 24
+  end
+  object MainMenu1: TMainMenu
+    Left = 56
+    Top = 40
+    object Cadastros1: TMenuItem
+      Caption = 'Cadastros'
+      object Cidades1: TMenuItem
+        Caption = 'Cidades'
+        OnClick = Cidades1Click
+      end
+    end
   end
 end

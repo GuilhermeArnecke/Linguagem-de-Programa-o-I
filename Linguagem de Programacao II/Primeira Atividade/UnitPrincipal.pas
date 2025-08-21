@@ -10,19 +10,22 @@ uses
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.FB,
   FireDAC.Phys.FBDef, FireDAC.VCLUI.Wait, FireDAC.Phys.IBBase, Data.DB,
   FireDAC.Comp.Client, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf,
-  FireDAC.DApt, Vcl.Grids, Vcl.DBGrids, FireDAC.Comp.DataSet, Vcl.StdCtrls;
+  FireDAC.DApt, Vcl.Grids, Vcl.DBGrids, FireDAC.Comp.DataSet, Vcl.StdCtrls,
+  System.IniFiles, UnDMPrincipal, Vcl.Menus, UnFormCadastroCidades;
 
 type
   TForm1 = class(TForm)
-    FDConexao: TFDConnection;
-    FDPhysFBDriverLink1: TFDPhysFBDriverLink;
-    FDQueryConsulta: TFDQuery;
     TabelaEstados: TDBGrid;
     DSEstados: TDataSource;
     ConectarButton: TButton;
+    MainMenu1: TMainMenu;
+    Cadastros1: TMenuItem;
+    Cidades1: TMenuItem;
     BuscarDadosButton: TButton;
     procedure ConectarButtonClick(Sender: TObject);
     procedure BuscarDadosButtonClick(Sender: TObject);
+    procedure Cidades1Click(Sender: TObject);
+    procedure TesteButtonClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -32,36 +35,32 @@ type
 var
   Form1: TForm1;
 
+
 implementation
 
 {$R *.dfm}
 
 procedure TForm1.BuscarDadosButtonClick(Sender: TObject);
 begin
-  FDQueryConsulta.Close;
+  DMPrincipal.BuscarDados;
+end;
 
-  FDQueryConsulta.SQL.Clear;
-  FDQueryConsulta.SQL.Add('SELECT * FROM ESTADOS');
-  FDQueryConsulta.Open;
+procedure TForm1.Cidades1Click(Sender: TObject);
+var
+  LFormCadastro: TFormCadastroCidade;
+begin
+  LFormCadastro := TFormCadastroCidade.Create(nil);
+  try
+    LFormCadastro.ShowModal;
+  finally
+    FreeAndNil(LFormCadastro);
+  end;
+
 end;
 
 procedure TForm1.ConectarButtonClick(Sender: TObject);
 begin
-  FDConexao.Close;
-  FDConexao.Params.Add('DriverID=FB');
-  FDConexao.Params.Add('Database=C:\Users\guilh\Documents\GitHub\Delphi\Linguagem de Programação II\Primeira Atividade\BANCO.FDB');
-  FDConexao.Params.Add('User_Name=SYSDBA');
-  FDConexao.Params.Add('Password=masterkey');
-
-  FDConexao.Connected := True;
-  if FDConexao.Connected then
-  begin
-    ShowMessage('Deu boa... =)');
-  end
-  else
-  begin
-    ShowMessage('Não deu boa... =(');
-  end;
+  DMPrincipal.ConectarBanco;
 end;
 
 end.
