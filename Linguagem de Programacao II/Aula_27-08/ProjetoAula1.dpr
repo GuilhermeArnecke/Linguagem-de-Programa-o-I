@@ -1,8 +1,8 @@
-program Projetoaula1;
+program ProjetoAula1;
 
 uses
   Vcl.Forms,
-  UnitPrincipal in 'UnitPrincipal.pas' {Form1},
+  UnPrincipal in 'UnPrincipal.pas' {Form1},
   UnDMPrincipal in 'UnDMPrincipal.pas' {DMPrincipal: TDataModule},
   UnFormCadastroCidades in 'UnFormCadastroCidades.pas' {FormCadastroCidade},
   UnDMCadastroCidades in 'UnDMCadastroCidades.pas' {DMCadastroCidades: TDataModule};
@@ -14,6 +14,5 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TForm1, Form1);
   Application.CreateForm(TDMPrincipal, DMPrincipal);
-  Application.CreateForm(TDMCadastroCidades, DMCadastroCidades);
   Application.Run;
 end.

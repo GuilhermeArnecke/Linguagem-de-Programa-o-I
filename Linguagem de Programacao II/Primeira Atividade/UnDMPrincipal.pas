@@ -15,7 +15,6 @@ type
     FDQueryConsulta: TFDQuery;
     FDPhysFBDriverLink1: TFDPhysFBDriverLink;
     FDConexao: TFDConnection;
-    QryCadastroCidades: TFDQuery;
   private
     { Private declarations }
   public

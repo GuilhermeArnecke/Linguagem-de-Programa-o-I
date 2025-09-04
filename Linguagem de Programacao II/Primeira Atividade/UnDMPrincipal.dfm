@@ -21,9 +21,4 @@ object DMPrincipal: TDMPrincipal
     Left = 80
     Top = 48
   end
-  object QryCadastroCidades: TFDQuery
-    Connection = FDConexao
-    Left = 208
-    Top = 264
-  end
 end

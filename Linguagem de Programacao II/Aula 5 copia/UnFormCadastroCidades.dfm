@@ -2,8 +2,8 @@ object FormCadastroCidade: TFormCadastroCidade
   Left = 0
   Top = 0
   Caption = 'Cadastro de Cidades'
-  ClientHeight = 441
-  ClientWidth = 624
+  ClientHeight = 617
+  ClientWidth = 865
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,47 +12,53 @@ object FormCadastroCidade: TFormCadastroCidade
   Font.Style = []
   TextHeight = 15
   object BtnNovo: TButton
-    Left = 56
-    Top = 40
+    Left = 144
+    Top = 64
     Width = 75
     Height = 25
     Caption = 'Novo'
     TabOrder = 0
   end
-  object BtnCancelar: TButton
-    Left = 248
-    Top = 40
-    Width = 75
-    Height = 25
-    Caption = 'Cancelar'
-    TabOrder = 1
-  end
-  object BtnSalvar: TButton
-    Left = 344
-    Top = 40
-    Width = 75
-    Height = 25
-    Caption = 'Salvar'
-    TabOrder = 2
-  end
   object BtnExcluir: TButton
-    Left = 152
-    Top = 40
+    Left = 272
+    Top = 64
     Width = 75
     Height = 25
     Caption = 'Excluir'
+    TabOrder = 1
+  end
+  object BtnCancelar: TButton
+    Left = 384
+    Top = 64
+    Width = 75
+    Height = 25
+    Caption = 'Cancelar'
+    TabOrder = 2
+  end
+  object BtnSalvar: TButton
+    Left = 488
+    Top = 64
+    Width = 75
+    Height = 25
+    Caption = 'Salvar'
     TabOrder = 3
   end
   object DBGrid1: TDBGrid
-    Left = 24
-    Top = 80
-    Width = 569
-    Height = 337
+    Left = 8
+    Top = 312
+    Width = 841
+    Height = 281
+    DataSource = DSMunicipios
     TabOrder = 4
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
+  end
+  object DSMunicipios: TDataSource
+    DataSet = DMPrincipal.QryCadastroCidades
+    Left = 168
+    Top = 168
   end
 end
