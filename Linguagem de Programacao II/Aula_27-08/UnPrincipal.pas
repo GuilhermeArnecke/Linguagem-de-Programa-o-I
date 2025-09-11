@@ -11,7 +11,7 @@ uses
   Data.DB, FireDAC.Comp.Client, FireDAC.Phys.FB, FireDAC.Phys.FBDef,
   FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, Vcl.Grids,
   Vcl.DBGrids, FireDAC.Comp.DataSet, FireDAC.Phys.IBBase, Vcl.StdCtrls,
-  System.IniFiles, Vcl.Menus, UnFormCadastroCidades;
+  System.IniFiles, Vcl.Menus, UnFormCadastroCidades, UnFormCadastroCurso;
 
 type
   TForm1 = class(TForm)
@@ -21,9 +21,11 @@ type
     MainMenu1: TMainMenu;
     Cadastros1: TMenuItem;
     Cidades1: TMenuItem;
+    C1: TMenuItem;
     procedure Button2Click(Sender: TObject);
     procedure Cidades1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure C1Click(Sender: TObject);
   private
     { Private declarations }
     function BuscarCaminhoBase(): string;
@@ -56,6 +58,19 @@ begin
   DMPrincipal.FDQueryConsulta.SQL.Clear;
   DMPrincipal.FDQueryConsulta.SQL.Add('SELECT * FROM ESTADOS');
   DMPrincipal.FDQueryConsulta.Open;
+
+end;
+
+procedure TForm1.C1Click(Sender: TObject);
+var
+  LFormCadastro: TFormCadastroCurso;
+begin
+  LFormCadastro := TFormCadastroCurso.Create(nil);
+  try
+    LFormCadastro.ShowModal;
+  finally
+    FreeAndNil(LFormCadastro)
+  end;
 
 end;
 

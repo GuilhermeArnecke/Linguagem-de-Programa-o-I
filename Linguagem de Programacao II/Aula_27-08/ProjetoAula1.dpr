@@ -5,7 +5,9 @@ uses
   UnPrincipal in 'UnPrincipal.pas' {Form1},
   UnDMPrincipal in 'UnDMPrincipal.pas' {DMPrincipal: TDataModule},
   UnFormCadastroCidades in 'UnFormCadastroCidades.pas' {FormCadastroCidade},
-  UnDMCadastroCidades in 'UnDMCadastroCidades.pas' {DMCadastroCidades: TDataModule};
+  UnDMCadastroCidades in 'UnDMCadastroCidades.pas' {DMCadastroCidades: TDataModule},
+  UnDMCadastroCurso in 'UnDMCadastroCurso.pas' {DMCadastroCurso: TDataModule},
+  UnFormCadastroCurso in 'UnFormCadastroCurso.pas' {FormCadastroCurso};
 
 {$R *.res}
 

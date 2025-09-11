@@ -49,6 +49,10 @@ object Form1: TForm1
         Caption = 'Cidades'
         OnClick = Cidades1Click
       end
+      object C1: TMenuItem
+        Caption = 'Curso'
+        OnClick = C1Click
+      end
     end
   end
 end

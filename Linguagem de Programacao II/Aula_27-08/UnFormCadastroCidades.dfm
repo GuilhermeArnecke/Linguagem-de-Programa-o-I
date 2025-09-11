@@ -45,7 +45,7 @@ object FormCadastroCidade: TFormCadastroCidade
     OnClick = BtnExcluirClick
   end
   object BtnCancelar: TButton
-    Left = 288
+    Left = 272
     Top = 24
     Width = 75
     Height = 25
@@ -54,7 +54,7 @@ object FormCadastroCidade: TFormCadastroCidade
     OnClick = BtnCancelarClick
   end
   object BtnSalvar: TButton
-    Left = 392
+    Left = 376
     Top = 24
     Width = 75
     Height = 25
