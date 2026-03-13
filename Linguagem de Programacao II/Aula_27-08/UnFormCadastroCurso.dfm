@@ -41,11 +41,11 @@ object FormCadastroCurso: TFormCadastroCurso
     Caption = 'Valor do Curso'
   end
   object DBGrid1: TDBGrid
-    Left = 104
-    Top = 252
-    Width = 713
-    Height = 285
-    DataSource = DsCurso
+    Left = 16
+    Top = 336
+    Width = 425
+    Height = 201
+    DataSource = DMCadastroCurso.DsCurso
     ReadOnly = True
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
@@ -57,25 +57,24 @@ object FormCadastroCurso: TFormCadastroCurso
       item
         Expanded = False
         FieldName = 'ID_CURSO'
-        Width = 92
+        Width = 67
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'CODIGO'
-        Width = 136
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'NOME'
-        Width = 308
+        Width = 155
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'VALOR'
-        Width = 145
+        Width = 69
         Visible = True
       end>
   end
@@ -121,7 +120,6 @@ object FormCadastroCurso: TFormCadastroCurso
     Width = 121
     Height = 23
     DataField = 'ID_CURSO'
-    DataSource = DsCurso
     TabOrder = 5
   end
   object DBEdit1: TDBEdit
@@ -130,7 +128,6 @@ object FormCadastroCurso: TFormCadastroCurso
     Width = 121
     Height = 23
     DataField = 'CODIGO'
-    DataSource = DsCurso
     TabOrder = 6
   end
   object DBEdit2: TDBEdit
@@ -139,7 +136,6 @@ object FormCadastroCurso: TFormCadastroCurso
     Width = 191
     Height = 23
     DataField = 'NOME'
-    DataSource = DsCurso
     TabOrder = 7
   end
   object DBEdit3: TDBEdit
@@ -148,12 +144,63 @@ object FormCadastroCurso: TFormCadastroCurso
     Width = 89
     Height = 23
     DataField = 'VALOR'
-    DataSource = DsCurso
     TabOrder = 8
   end
-  object DsCurso: TDataSource
-    DataSet = DMCadastroCurso.QryCadastroCurso
-    Left = 800
-    Top = 40
+  object BtnPrimeiro: TButton
+    Left = 456
+    Top = 212
+    Width = 75
+    Height = 25
+    Caption = 'Primeiro'
+    TabOrder = 9
+    OnClick = BtnPrimeiroClick
+  end
+  object BtnAnterior: TButton
+    Left = 553
+    Top = 212
+    Width = 75
+    Height = 25
+    Caption = 'Anterior'
+    TabOrder = 10
+    OnClick = BtnAnteriorClick
+  end
+  object BtnProximo: TButton
+    Left = 648
+    Top = 212
+    Width = 75
+    Height = 25
+    Caption = 'Proximo'
+    TabOrder = 11
+    OnClick = BtnProximoClick
+  end
+  object BtnUltimo: TButton
+    Left = 742
+    Top = 212
+    Width = 75
+    Height = 25
+    Caption = 'Ultimo'
+    TabOrder = 12
+    OnClick = BtnUltimoClick
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 120
+    Top = 280
+    Width = 690
+    Height = 25
+    DataSource = DMCadastroCurso.DsAlunos
+    TabOrder = 13
+  end
+  object DBGrid2: TDBGrid
+    Left = 488
+    Top = 336
+    Width = 401
+    Height = 201
+    DataSource = DMCadastroCurso.DsAlunos
+    TabOrder = 14
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
   end
 end

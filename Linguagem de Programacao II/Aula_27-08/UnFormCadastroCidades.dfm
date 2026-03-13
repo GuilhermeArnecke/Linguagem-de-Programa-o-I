@@ -89,6 +89,7 @@ object FormCadastroCidade: TFormCadastroCidade
       item
         Expanded = False
         FieldName = 'DescricaoEstado'
+        Width = 64
         Visible = True
       end>
   end
@@ -121,6 +122,15 @@ object FormCadastroCidade: TFormCadastroCidade
     ListField = 'NOME'
     ListSource = DsEstados
     TabOrder = 7
+  end
+  object Button1: TButton
+    Left = 784
+    Top = 24
+    Width = 89
+    Height = 25
+    Caption = 'Gerar Relat'#243'rio'
+    TabOrder = 8
+    OnClick = Button1Click
   end
   object DsCidades: TDataSource
     DataSet = DMCadastroCidades.QryCadastroCidades

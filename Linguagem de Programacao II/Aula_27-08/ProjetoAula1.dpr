@@ -7,7 +7,10 @@ uses
   UnFormCadastroCidades in 'UnFormCadastroCidades.pas' {FormCadastroCidade},
   UnDMCadastroCidades in 'UnDMCadastroCidades.pas' {DMCadastroCidades: TDataModule},
   UnDMCadastroCurso in 'UnDMCadastroCurso.pas' {DMCadastroCurso: TDataModule},
-  UnFormCadastroCurso in 'UnFormCadastroCurso.pas' {FormCadastroCurso};
+  UnFormCadastroCurso in 'UnFormCadastroCurso.pas' {FormCadastroCurso},
+  UnRelatorioCidades in 'UnRelatorioCidades.pas' {FormRelatoriosCidadesPadrao},
+  UnFormFiltroRelatorioCidades in 'UnFormFiltroRelatorioCidades.pas' {FormFiltroRelatorioCidades},
+  UnFormRelatorioCidades in 'UnFormRelatorioCidades.pas' {FormRelatorioCidades};
 
 {$R *.res}
 

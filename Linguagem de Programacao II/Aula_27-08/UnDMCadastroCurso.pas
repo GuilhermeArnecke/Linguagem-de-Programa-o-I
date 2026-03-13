@@ -15,6 +15,9 @@ type
     QryCadastroCursoCODIGO: TIntegerField;
     QryCadastroCursoNOME: TStringField;
     QryCadastroCursoVALOR: TFMTBCDField;
+    QryAlunos: TFDQuery;
+    DsCurso: TDataSource;
+    DsAlunos: TDataSource;
     procedure QryCadastroCursoNewRecord(DataSet: TDataSet);
   private
     { Private declarations }

@@ -33,4 +33,22 @@ object DMCadastroCurso: TDMCadastroCurso
       Size = 2
     end
   end
+  object QryAlunos: TFDQuery
+    CachedUpdates = True
+    MasterSource = DsCurso
+    MasterFields = 'ID_CURSO'
+    Connection = DMPrincipal.FDConexao
+    Left = 224
+    Top = 400
+  end
+  object DsCurso: TDataSource
+    DataSet = QryCadastroCurso
+    Left = 432
+    Top = 168
+  end
+  object DsAlunos: TDataSource
+    DataSet = QryAlunos
+    Left = 440
+    Top = 400
+  end
 end

@@ -54,5 +54,12 @@ object Form1: TForm1
         OnClick = C1Click
       end
     end
+    object Relatrios1: TMenuItem
+      Caption = 'Relat'#243'rios'
+      object RelatrioCidades1: TMenuItem
+        Caption = 'Relat'#243'rio Cidades'
+        OnClick = RelatrioCidades1Click
+      end
+    end
   end
 end

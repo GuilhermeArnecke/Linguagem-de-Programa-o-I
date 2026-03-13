@@ -152,6 +152,18 @@
             <Form>FormCadastroCurso</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="UnRelatorioCidades.pas">
+            <Form>FormRelatoriosCidadesPadrao</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="UnFormFiltroRelatorioCidades.pas">
+            <Form>FormFiltroRelatorioCidades</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="UnFormRelatorioCidades.pas">
+            <Form>FormRelatorioCidades</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

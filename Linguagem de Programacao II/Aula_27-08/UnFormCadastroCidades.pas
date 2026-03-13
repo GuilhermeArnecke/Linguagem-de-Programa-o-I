@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.DB, Vcl.Grids,
-  Vcl.DBGrids, UnDMCadastroCidades, Vcl.Mask, Vcl.ExtCtrls, Vcl.DBCtrls;
+  Vcl.DBGrids, UnDMCadastroCidades, Vcl.Mask, Vcl.ExtCtrls, Vcl.DBCtrls,
+  UnRelatorioCidades;
 
 type
   TFormCadastroCidade = class(TForm)
@@ -22,11 +23,13 @@ type
     DBEdit2: TDBEdit;
     DBLookupComboBox1: TDBLookupComboBox;
     DsEstados: TDataSource;
+    Button1: TButton;
     procedure FormShow(Sender: TObject);
     procedure BtnNovoClick(Sender: TObject);
     procedure BtnExcluirClick(Sender: TObject);
     procedure BtnCancelarClick(Sender: TObject);
     procedure BtnSalvarClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -61,6 +64,20 @@ begin
     DMCadastroCidades.QryCadastroCidades.Post;
 
   DMCadastroCidades.QryCadastroCidades.ApplyUpdates;
+end;
+
+procedure TFormCadastroCidade.Button1Click(Sender: TObject);
+var
+  LFormRelatorio: TFormRelatoriosCidadesPadrao;
+begin
+  LFormRelatorio := TFormRelatoriosCidadesPadrao.Create(nil);
+  try
+    LFormRelatorio.DsDados.DataSet := DMCadastroCidades.QryCadastroCidades;
+
+    LFormRelatorio.ReportCidade.Preview;
+  finally
+    FreeAndNil(LFormRelatorio);
+  end;
 end;
 
 procedure TFormCadastroCidade.FormShow(Sender: TObject);

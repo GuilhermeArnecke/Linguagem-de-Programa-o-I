@@ -11,7 +11,8 @@ uses
   Data.DB, FireDAC.Comp.Client, FireDAC.Phys.FB, FireDAC.Phys.FBDef,
   FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, Vcl.Grids,
   Vcl.DBGrids, FireDAC.Comp.DataSet, FireDAC.Phys.IBBase, Vcl.StdCtrls,
-  System.IniFiles, Vcl.Menus, UnFormCadastroCidades, UnFormCadastroCurso;
+  System.IniFiles, Vcl.Menus, UnFormCadastroCidades, UnFormCadastroCurso,
+  UnFormFiltroRelatorioCidades;
 
 type
   TForm1 = class(TForm)
@@ -22,10 +23,13 @@ type
     Cadastros1: TMenuItem;
     Cidades1: TMenuItem;
     C1: TMenuItem;
+    Relatrios1: TMenuItem;
+    RelatrioCidades1: TMenuItem;
     procedure Button2Click(Sender: TObject);
     procedure Cidades1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure C1Click(Sender: TObject);
+    procedure RelatrioCidades1Click(Sender: TObject);
   private
     { Private declarations }
     function BuscarCaminhoBase(): string;
@@ -90,6 +94,18 @@ end;
 procedure TForm1.FormShow(Sender: TObject);
 begin
   DMPrincipal.ConectarBanco;
+end;
+
+procedure TForm1.RelatrioCidades1Click(Sender: TObject);
+var
+  LFormFiltro: TFormFiltroRelatorioCidades;
+begin
+  LFormFiltro := TFormFiltroRelatorioCidades.Create(nil);
+  try
+    LFormFiltro.ShowModal;
+  finally
+    FreeAndNil(LFormFiltro);
+  end;
 end;
 
 end.
