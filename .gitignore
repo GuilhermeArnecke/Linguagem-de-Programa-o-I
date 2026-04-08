@@ -79,3 +79,8 @@ __recovery/
 
 # Boss dependency manager vendor folder https://github.com/HashLoad/boss
 modules/
+/Java/Quinto Semestre/AnalistaDeVendasFuncional/nbproject/private/
+/Java/Quinto Semestre/AnalistaDeVendasFuncional/build/
+/Java/Quinto Semestre/Revenda/nbproject/private/
+/Java/Quinto Semestre/RevendaVeiculo/nbproject/private/
+/Java/Quinto Semestre/RevendaVeiculo/build/
