@@ -1,27 +1,28 @@
 package com.mycompany.pessoahibernate;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
 import java.util.List;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 
 public class PessoaDAO {
-    private SessionFactory factory = new 
-        Configuration().configure().buildSessionFactory();
+    
+    private final EntityManagerFactory factory = 
+            Persistence.createEntityManagerFactory("persistence");
     
     public void salvar(Pessoa pessoa) {
-        Session s = factory.openSession();
-        s.beginTransaction();
-        s.persist(pessoa);
-        s.getTransaction().commit();
-        s.close();
+        try (EntityManager em = factory.createEntityManager()) {
+            em.getTransaction().begin();
+            em.persist(pessoa);
+            em.getTransaction().commit();
+        }
     }
     
-    public List<Pessoa> listar(){
+    public List<Pessoa> listar() {
         List<Pessoa> lista;
-        try (Session s = factory.openSession()) {
-            lista = s.createQuery("from Pessoa", 
-                Pessoa.class).list();
+        try (EntityManager em = factory.createEntityManager()) {
+            lista = em.createQuery("SELECT p FROM Pessoa p", Pessoa.class)
+                    .getResultList();
         }
         return lista;
     }
