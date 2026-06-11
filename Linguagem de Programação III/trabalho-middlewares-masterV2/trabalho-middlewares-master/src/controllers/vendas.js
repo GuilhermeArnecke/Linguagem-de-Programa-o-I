@@ -1,7 +1,7 @@
 const serviceVenda = require('../services/vendas')
 const serviceAuth = require('../services/auth')
 const serviceFatu = require('../services/faturas')
-const auth = require('./auth')
+// const auth = require('./auth')
 
 async function getVendas (req, res) {
   try {
@@ -90,7 +90,7 @@ async function updateVenda (req, res) {
     }
 
     const { tipo_acesso } = await serviceAuth.takeIdUser(params.usuario_id_acessado)
-
+    
     if (vendaParams.usuario_id !== params.usuario_id_acessado && tipo_acesso !== 'admin') {
       return res.status(403).json({
         status: 'error',
@@ -121,10 +121,11 @@ async function updateVenda (req, res) {
     } 
 
     const atualizarVenda = await serviceVenda.updateVenda(params);
-    
-    if (faturaParams && faturaParams.status === 'pago' ) {
+
+    if (faturaParams && faturaParams.status !== 'pago' ) {
       const dadosFatura = {
-        usuario_id: faturaParams.id,
+        id: faturaParams.id,
+        usuario_id: params.usuario_id,
         valor_fatura: params.total_venda
       }
 

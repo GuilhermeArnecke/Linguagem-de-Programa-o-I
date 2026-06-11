@@ -61,37 +61,42 @@ async function updateFatura (params) {
   const campos = []
   const binds = []
   let bindIndex = 1
-  console.log(binds)
+
+  console.log(params)
+  console.log(params.valor_fatura)
+
   if (Object.hasOwn(params, 'status')) {
     campos.push(` status = $${bindIndex++} `)
     binds.push(params.status)
   }
-  console.log(binds)
+
   if (Object.hasOwn(params, 'data_pagamento')) {
     campos.push(` data_pagamento = $${bindIndex++} `)
     binds.push(params.data_pagamento)
   }
-  console.log(binds)
+
   if (Object.hasOwn(params, 'usuario_id')) {
     campos.push(` usuario_id = $${bindIndex++} `)
     binds.push(params.usuario_id)
   }
-  console.log(binds)
+
   if (Object.hasOwn(params, 'valor_fatura')) {
     campos.push(` valor_fatura = $${bindIndex++} `)
     binds.push(params.valor_fatura)
   }
-  console.log(binds)
+
   binds.push(params.id)
-  console.log(binds)
+
   const sql = `
     update faturas
        set ${campos.join(',')}
      where id = $${bindIndex++}
      returning *
   `
+  console.log(sql)
+  console.log(binds)
   const resposta = await db.query(sql, binds)
-  return result.rows[0];
+  return resposta.rows[0];
 }
 
 async function deleteFatura(params) {
