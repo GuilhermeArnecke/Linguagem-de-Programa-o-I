@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manipulando o DOM</title>
+  <style>
+    button {
+      border-color: blue;
+      border-radius: 5px;
+      background-color: white;
+      color: blue;
+      cursor: pointer;
+    }
+
+    .fruta {
+      color: green;
+      font-size: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <button id='botaoDeClicar'>Clique em mim!</button>
+  <hr>
+  Lista de Frutas
+  <ul>
+    <li class='fruta'>Maçã</li>
+    <li class='fruta'>Melancia</li>
+    <li class='fruta'>Uva</li>
+  </ul>
+</body>
+
+</html>
+
+<script>
+  const botao = document.querySelector('#botaoDeClicar')
+
+  botao.addEventListener('click', (event) => {
+    mostrarFrutas()
+  })
+
+  function mostrarFrutas() {
+    const frutas = document.querySelectorAll('.fruta');
+    const frutasString = frutas.forEach(el => alert(el.textContent))
+  }
+
+</script>

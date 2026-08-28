@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Alunos</title>
+  <style>
+    body {
+      background-color: gray;
+    }
+    input {
+      background-color: gainsboro;
+      border-radius: 15px;
+    }
+    form {
+      padding: 10px;
+    }
+    th {
+      border: solid 3px gainsboro;
+      border-radius: 5px;
+    }
+    td {
+      border:solid 1px gainsboro;
+      border-radius: 5px;
+    }
+    button {
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Minha Lista Pai</h2>
+  <hr>
+  <form id="formularioLegal">
+    <label for="nameTag"><strong>NameTag</strong></label><br>
+    <input id="nameTag" type="text"><br><br>
+    <label for="kills"><strong>Kills</strong></label><br>
+    <input id="kills" type="text"><br>
+  <button type="submit"><strong>Salvar Inserção</strong></button>
+  </form>
+  <hr>
+  <table>
+    <tr>
+      <th>NameTag</th>
+      <th>Kills</th>
+    </tr>
+    <tbody id="talTabela"></tbody>
+  </table>
+</body>
+</html>
+
+<script>
+  const formulario = document.querySelector('#formularioLegal');
+  const nameTag = document.querySelector('#nameTag');
+  const killsTag= document.querySelector('#kills');
+  const talTabela = document.querySelector('#talTabela');
+
+  let kills = [];
+
+  function adicionarKillNaTabela (name, kills) {
+    const nameTagtd = document.createElement('td')
+    nameTagtd.textContent = name
+
+    const killsTagtd = document.createElement('td')
+    killsTagtd.textContent = kills
+
+    const tr = document.createElement('tr')
+    tr.appendChild(nameTagtd)
+    tr.appendChild(killsTagtd)
+
+    talTabela.appendChild(tr)
+  }
+
+  function salvarKillLocalmente (kill) {
+    buscarKillLocalmente()
+    kills.push(kill)
+    localStorage.setItem('kills', JSON.stringify(kills))
+  }
+
+  function buscarKillLocalmente () {
+    const temKillRegistrada = localStorage.getItem('kills')
+    if (!temKillRegistrada) {
+      kills = []
+    } else {
+      kills = JSON.parse(temKillRegistrada)
+    }
+  }
+
+  function buscarKillsAoCarregarTela () {
+    buscarKillLocalmente()
+    for (const kill of kills) {
+      adicionarKillNaTabela(kill.name, kill.kills)
+    }
+  }
+
+  formulario.addEventListener('submit', (event) => {
+    event.preventDefault()
+
+    if (!nameTag.value || !killsTag.value) {
+      return alert("Preencha todos os campos para registrar")
+    }
+
+    adicionarKillNaTabela(nameTag.value, killsTag.value)
+    salvarKillLocalmente({
+      name: nameTag.value,
+      kills: killsTag.value
+    })
+
+    nameTag.value = ''
+    killsTag.value = ''
+  })
+
+  buscarKillsAoCarregarTela()
+
+</script>
