@@ -1,5 +1,13 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package folhapagamento;
 
+/**
+ *
+ * @author giovannigomescastagna
+ */
 public class Funcionario {
     private String nome;
     protected double salario;
@@ -8,7 +16,7 @@ public class Funcionario {
         this.nome = nome;
         this.salario = salario;
     }
-    
+        
     public double getBonificacao() {
         return this.salario * 0.10;
     }
@@ -20,5 +28,4 @@ public class Funcionario {
     public double getSalario() {
         return this.salario;
     }
-    
 }
