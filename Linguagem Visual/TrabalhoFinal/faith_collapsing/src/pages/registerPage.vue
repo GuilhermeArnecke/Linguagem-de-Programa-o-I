@@ -51,9 +51,6 @@ import RegisterBox from '../components/registerBox.vue'
   min-height: 100vh;
 
   overflow: hidden;
-
-  border: 6px solid #382719;
-  box-sizing: border-box;
 }
 
 /* Área da floresta */

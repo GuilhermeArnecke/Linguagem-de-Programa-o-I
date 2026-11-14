@@ -1,6 +1,31 @@
+@font-face {
+  font-family: 'The Inquisition';
+
+  src: url('../assets/fonts/TheInquisition.ttf') format('truetype');
+
+  font-weight: normal;
+  font-style: normal;
+
+  font-display: swap;
+}
+
+:root {
+  --game-font: 'The Inquisition', serif;
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  background: #1c1c1f;
-  font-family: Arial, sans-serif;
+  font-family: var(--game-font);
+}
+
+button,
+input,
+textarea,
+select,
+.q-btn,
+.q-field,
+.q-field__native,
+.q-field__input,
+.q-tab,
+.q-item {
+  font-family: var(--game-font);
 }

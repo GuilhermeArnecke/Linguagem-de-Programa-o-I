@@ -43,11 +43,6 @@ const password = ref('')
 </script>
 
 <style scoped>
-@font-face {
-  font-family: 'The Inquisition';
-  src: url('/src/assets/fonts/the_inquisition.ttf') format('truetype');
-}
-
 .login-container {
   display: flex;
   justify-content: center;
@@ -99,8 +94,6 @@ const password = ref('')
 
 .login-input {
   width: 100%;
-
-  font-family: 'The Inquisition', serif;
   font-size: 18px;
   font-weight: bold;
 }
@@ -121,7 +114,6 @@ const password = ref('')
 }
 
 .login-input :deep(.q-field__native) {
-  font-family: 'The Inquisition', serif;
   font-size: 30px;
   font-weight: bold;
 
@@ -140,7 +132,7 @@ const password = ref('')
 }
 
 .password-input :deep(.q-field__native::placeholder) {
-  font-family: 'The Inquisition', serif;
+  font-family: 'The Inquisition', serif !important;
   letter-spacing: normal;
   color: #9b947c;
   opacity: 1;
@@ -160,7 +152,6 @@ const password = ref('')
   border: none;
   padding: 0;
 
-  font-family: 'The Inquisition', serif;
   font-size: 22px;
   font-weight: bold;
 
@@ -180,7 +171,6 @@ const password = ref('')
 
   color: white;
 
-  font-family: 'The Inquisition', serif;
   font-size: 30px;
   font-weight: bold;
 }
