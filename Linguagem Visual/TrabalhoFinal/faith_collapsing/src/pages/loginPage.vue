@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import backgroundImage from '../assets/BackgroundLogin.png'
+import backgroundImage from '../assets/backgrounds/Login/BackgroundLogin.png'
 import LoginBox from '../components/loginBox.vue'
 </script>
 

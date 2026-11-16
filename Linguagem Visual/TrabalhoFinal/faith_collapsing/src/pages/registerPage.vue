@@ -17,7 +17,6 @@ import RegisterBox from '../components/registerBox.vue'
 </script>
 
 <style scoped>
-/* Container principal */
 .register-container {
   width: 100%;
   min-height: 100vh;
@@ -29,7 +28,6 @@ import RegisterBox from '../components/registerBox.vue'
   background-color: #202020;
 }
 
-/* Página */
 .register-page {
   width: 100%;
   min-height: 100vh;
@@ -41,7 +39,6 @@ import RegisterBox from '../components/registerBox.vue'
   padding: 0;
 }
 
-/* Painel completo */
 .register-card {
   display: grid;
 
@@ -53,7 +50,6 @@ import RegisterBox from '../components/registerBox.vue'
   overflow: hidden;
 }
 
-/* Área da floresta */
 .register-scene {
   position: relative;
 
@@ -62,14 +58,13 @@ import RegisterBox from '../components/registerBox.vue'
 
   min-width: 0;
 
-  background-image: url('../assets/BackgroundCadastro.png');
+  background-image: url('../assets/backgrounds/Cadastro/BackgroundCadastro.png');
 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-/* Logo do jogo */
 .game-logo {
   position: absolute;
 
@@ -86,7 +81,6 @@ import RegisterBox from '../components/registerBox.vue'
   object-fit: contain;
 }
 
-/* Responsividade */
 @media (max-width: 700px) {
   .register-card {
     grid-template-columns: 1fr;

@@ -12,6 +12,16 @@
         />
 
         <q-input
+          v-model="email"
+          placeholder="E-MAIL..."
+          type="email"
+          outlined
+          dense
+          hide-bottom-space
+          class="register-input"
+        />
+
+        <q-input
           v-model="password"
           placeholder="SENHA..."
           type="password"
@@ -31,7 +41,6 @@
           class="register-input password-input"
         />
 
-        <!-- Seleção de classe -->
         <div class="class-selection">
           <button
             type="button"
@@ -68,6 +77,15 @@
         </div>
 
         <q-btn label="CADASTRAR" class="register-button" unelevated no-caps />
+
+        <q-btn
+          label="JA TEM UMA CONTA?"
+          flat
+          no-caps
+          :ripple="false"
+          class="login-link"
+          @click="irParaLogin"
+        />
       </div>
     </div>
   </div>
@@ -78,10 +96,15 @@ import { ref } from 'vue'
 import { QInput, QBtn } from 'quasar'
 
 const username = ref('')
+const email = ref('')
 const password = ref('')
 const confirmPassword = ref('')
 
 const selectedClass = ref(null)
+
+const irParaLogin = () => {
+  console.log('Ir para o login')
+}
 </script>
 
 <style scoped>
@@ -100,8 +123,7 @@ const selectedClass = ref(null)
   align-items: center;
   box-sizing: border-box;
 
-  /* Fundo de madeira */
-  background-image: url('../assets/BackgroundBox.png');
+  background-image: url('../assets/backgrounds/Cadastro/BackgroundBox.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -111,10 +133,8 @@ const selectedClass = ref(null)
   width: 78%;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
 }
-
-/* Campos de cadastro */
 
 .register-input {
   width: 100%;
@@ -125,8 +145,8 @@ const selectedClass = ref(null)
 .register-input :deep(.q-field__control) {
   background-color: #fff4cf;
   border: 3px solid #695338;
-  border-radius: 14px;
-  height: 75px;
+  border-radius: 12px;
+  height: 58px;
   padding: 0 12px;
 }
 
@@ -136,7 +156,7 @@ const selectedClass = ref(null)
 }
 
 .register-input :deep(.q-field__native) {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
   color: #8c8265;
 }
@@ -147,8 +167,6 @@ const selectedClass = ref(null)
   opacity: 1;
 }
 
-/* Campos de senha */
-
 .password-input :deep(.q-field__native) {
   font-family: Arial, sans-serif !important;
   letter-spacing: 3px;
@@ -158,8 +176,6 @@ const selectedClass = ref(null)
   font-family: 'The Inquisition', serif !important;
   letter-spacing: normal;
 }
-
-/* Seleção de classe */
 
 .class-selection {
   display: flex;
@@ -172,13 +188,13 @@ const selectedClass = ref(null)
 .class-button {
   width: 100%;
   max-width: 120px;
-  height: 110px;
+  height: 92px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 7px;
+  gap: 5px;
 
   background-color: #fff4cf;
   border: 2px solid #695338;
@@ -189,26 +205,22 @@ const selectedClass = ref(null)
 }
 
 .class-button img {
-  width: 58px;
-  height: 58px;
+  width: 48px;
+  height: 48px;
   object-fit: contain;
   image-rendering: pixelated;
 }
 
 .class-button span {
   font-family: 'The Inquisition', serif;
-  font-size: 14px;
+  font-size: 13px;
   color: #8c8265;
 }
-
-/* Efeito ao passar o mouse */
 
 .class-button:hover {
   transform: translateY(-3px);
   background-color: #fff9df;
 }
-
-/* Classe selecionada */
 
 .class-button.selected {
   background-color: #d6c18d;
@@ -217,19 +229,17 @@ const selectedClass = ref(null)
   transform: translateY(-3px);
 }
 
-/* Botão cadastrar */
-
 .register-button {
   width: 75%;
-  height: 75px;
+  height: 60px;
   align-self: center;
 
   background-color: #747b4d;
   border: 3px solid #4e5034;
-  border-radius: 14px;
+  border-radius: 12px;
 
   color: white;
-  font-size: 32px;
+  font-size: 26px;
   font-weight: bold;
 }
 
@@ -237,29 +247,49 @@ const selectedClass = ref(null)
   background-color: #858c59;
 }
 
-/* Responsividade */
+.login-link {
+  align-self: center;
+  padding: 0;
+  min-height: auto;
+
+  font-family: 'The Inquisition', serif;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+
+  color: #695338;
+  text-shadow: 1px 1px 0 rgba(255, 244, 207, 0.45);
+}
+
+.login-link :deep(.q-focus-helper) {
+  display: none;
+}
+
+.login-link:hover {
+  opacity: 0.8;
+}
 
 @media (max-width: 700px) {
   .register-content {
     width: 85%;
-    gap: 20px;
+    gap: 14px;
   }
 
   .register-input :deep(.q-field__control) {
-    height: 60px;
+    height: 50px;
   }
 
   .register-input :deep(.q-field__native) {
-    font-size: 20px;
+    font-size: 17px;
   }
 
   .class-button {
-    height: 85px;
+    height: 78px;
   }
 
   .class-button img {
-    width: 42px;
-    height: 42px;
+    width: 38px;
+    height: 38px;
   }
 
   .class-button span {
@@ -268,8 +298,12 @@ const selectedClass = ref(null)
 
   .register-button {
     width: 80%;
-    height: 60px;
-    font-size: 25px;
+    height: 52px;
+    font-size: 22px;
+  }
+
+  .login-link {
+    font-size: 14px;
   }
 }
 </style>

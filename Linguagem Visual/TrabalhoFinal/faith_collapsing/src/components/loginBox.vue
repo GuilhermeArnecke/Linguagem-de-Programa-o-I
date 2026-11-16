@@ -72,7 +72,7 @@ const password = ref('')
   position: absolute;
   inset: 0;
 
-  background-image: url('/src/assets/textura-madeira.png');
+  background-image: url('/src/assets/backgrounds/Login/textura-madeira.png');
   background-size: cover;
   background-position: center;
 

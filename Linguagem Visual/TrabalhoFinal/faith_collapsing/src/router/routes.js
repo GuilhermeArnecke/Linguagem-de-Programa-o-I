@@ -1,6 +1,6 @@
 const routes = [
   {
-    //Rota do que não tem quase nada na tela
+    //Rota do que não é relacionado diretamente com a gameplay
     path: '/',
     component: () => import('../layouts/InitialLayout.vue'),
     children: [
@@ -13,8 +13,8 @@ const routes = [
         component: () => import('../pages/registerPage.vue'),
       },
       {
-        path: '/selecao-dificuldade',
-        component: () => import('../pages/dificultyPage.vue'),
+        path: '/dificuldade',
+        component: () => import('../pages/difficultyPage.vue'),
       },
     ],
   },
@@ -23,6 +23,21 @@ const routes = [
     //Rota do jogo (verdadeiramente chamado Erivelton Adventures 2)
     path: '/game',
     component: () => import('../layouts/GameLayout.vue'),
+
+    children: [
+      {
+        path: 'easy',
+        component: () => import('../pages/easyPage.vue'),
+      },
+      {
+        path: 'normal',
+        component: () => import('../pages/normalPage.vue'),
+      },
+      {
+        path: 'hard',
+        component: () => import('../pages/hardPage.vue'),
+      },
+    ],
   },
 
   {
